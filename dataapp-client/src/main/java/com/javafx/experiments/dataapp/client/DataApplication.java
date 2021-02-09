@@ -58,6 +58,7 @@ public class DataApplication extends Application {
     private Parent root;
 
     @Override public void init() throws Exception {
+        Thread.sleep(5000);
         americanRegions.add("All Regions");
         productTypes.add("All Products");
         registerDataLoadingTask(() -> {

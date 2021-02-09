@@ -22,3 +22,13 @@ javafx {
 application {
     applicationDefaultJvmArgs = [ '-Djavafx.preloader=dataapppreloader.DataAppPreloader' ]
 }
+
+File distDir = file("dist")
+distDir.mkdir()
+
+tasks.register('dist', Copy) {
+    dependsOn jar
+    from configurations.runtimeClasspath
+    from jar
+    into distDir
+}
